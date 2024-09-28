@@ -27,13 +27,15 @@ body {
 .seeMore {
   border: 0;
   background-color: transparent;
+  margin-top: auto; /* Push the button to the bottom */
+  text-align: center; /* Center the button */
 }
 
-#projectSelector {
-  display: flex;
-  justify-content: center;
-  align-items: row;
-  margin-bottom: 20px;
+.seeMore:hover {
+  border-bottom: 1px solid black;
+  transition: 300ms;
+  cursor: pointer;
+  color: #ea1c2c;
 }
 
 .projectButtons {
@@ -45,15 +47,17 @@ body {
   border-bottom: 1px solid black;
   transition: 300ms;
   cursor: pointer;
+  color: #ea1c2c;
 }
 
-.seeMore:hover {
-  border-bottom: 1px solid black;
-  transition: 300ms;
-  cursor: pointer;
+#projectSelector {
+  display: flex;
+  justify-content: center;
+  align-items: row;
+  margin-bottom: 20px;
 }
 
-.description h2 {
+h2 {
   color: #ea1c2c;
   font-weight: 100;
   font-size: 2.5rem;
@@ -104,6 +108,16 @@ body {
 #headingGroup h1 {
   font-weight: 300;
   font-size: 4rem;
+}
+
+footer {
+  background-color: #43423f;
+  height: 100px;
+  margin: 0;
+}
+
+footer p {
+  margin-bottom: 0;
 }
 
 .navbar.scrolled {
