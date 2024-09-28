@@ -1,0 +1,119 @@
+body {
+  background-color: #faf7f0;
+  font-family: "Nunito", sans-serif;
+}
+
+/* .landingPage {
+  width: 100vh;
+  height: 100vh;
+  background: center/cover url(imgs/project-3/el1.jpg);
+  transform: rotate(-90deg);
+  margin: 0 auto;
+} */
+
+#mainPic {
+  margin-top: 60px;
+  bottom: 100px;
+  height: 500px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.projectHeading {
+  display: flex;
+  justify-content: center;
+}
+
+.seeMore {
+  border: 0;
+  background-color: transparent;
+}
+
+#projectSelector {
+  display: flex;
+  justify-content: center;
+  align-items: row;
+  margin-bottom: 20px;
+}
+
+.projectButtons {
+  border: 0;
+  background-color: transparent;
+}
+
+.projectButtons:hover {
+  border-bottom: 1px solid black;
+  transition: 300ms;
+  cursor: pointer;
+}
+
+.seeMore:hover {
+  border-bottom: 1px solid black;
+  transition: 300ms;
+  cursor: pointer;
+}
+
+.description h2 {
+  color: #ea1c2c;
+  font-weight: 100;
+  font-size: 2.5rem;
+}
+
+.description p {
+  color: black;
+  font-weight: 100;
+  font-size: 1.125rem;
+  line-height: 2;
+}
+
+.content {
+  margin: 100px 0;
+}
+
+#mainNavbar {
+  height: 60px;
+  padding: 0px 15px;
+  font-size: 1.5rem;
+  font-weight: 100;
+}
+
+#navLinks {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#mainNavbar .nav-link {
+  color: black;
+}
+
+#mainNavbar .nav-link:hover {
+  color: #ea1c2c;
+  cursor: pointer;
+}
+
+#mainNavbar .navbar-brand {
+  color: black;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+#headingGroup span {
+  color: #ea1c2c;
+}
+
+#headingGroup h1 {
+  font-weight: 300;
+  font-size: 4rem;
+}
+
+.navbar.scrolled {
+  background-color: #faf7f0b0;
+  transition: background 300ms;
+}
+
+@media (max-width: 1300px) {
+  #headingGroup h1 {
+    font-weight: 100;
+    font-size: 3rem;
+  }
+}
