@@ -59,6 +59,8 @@ body {
   justify-content: center;
   align-items: row;
   margin-bottom: 20px;
+  align-content: space-between;
+  font-size: large;
 }
 
 h2 {
@@ -74,6 +76,24 @@ h2 {
   line-height: 2;
 }
 
+.about {
+  width: 60%;
+  margin: 5% calc(40% / 2);
+}
+
+.divAbout p {
+  color: black;
+  font-weight: 100;
+  font-size: 1.125rem;
+  line-height: 2;
+}
+
+#about {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid black;
+}
+
 .content {
   margin: 100px 0;
 }
@@ -83,6 +103,11 @@ h2 {
   padding: 0px 15px;
   font-size: 1.5rem;
   font-weight: 100;
+}
+#projectHeading {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
 }
 
 #navLinks {
@@ -125,12 +150,13 @@ footer p {
 }
 
 .navbar.scrolled {
-  background-color: #a3a19cb0;
+  background-color: #8e8a82d2;
   transition: background 300ms;
 }
 
-.navbar-toggler {
-  display: none;
+.address {
+  padding-top: 20px;
+  padding-left: 40px;
 }
 
 @media (max-width: 1300px) {
