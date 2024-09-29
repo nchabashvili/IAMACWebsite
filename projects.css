@@ -28,3 +28,10 @@ img {
   object-fit: cover;
   object-position: center;
 }
+
+@media (max-width: 1300px) {
+  .project {
+    width: 90%;
+    margin: calc(10% / 2);
+  }
+}
