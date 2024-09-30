@@ -159,9 +159,60 @@ footer p {
   padding-left: 40px;
 }
 
+label {
+  margin: 0 40px 0 0;
+  font-size: 26px;
+  line-height: 60px;
+  display: none;
+}
+
+#toggle {
+  display: none;
+}
+
 @media (max-width: 1300px) {
   #headingGroup h1 {
     font-weight: 100;
     font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar.scrolled {
+    ul {
+      background-color: #8e8a82d2;
+      transition: background 300ms;
+    }
+  }
+
+  ul {
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .navbar-brand {
+    padding-left: 10px;
+  }
+
+  #mainNavbar {
+    padding: 0;
+  }
+
+  label {
+    display: block;
+    cursor: pointer;
+  }
+
+  #navLinks {
+    display: none;
+  }
+
+  #toggle:checked + #navLinks {
+    display: block;
   }
 }
