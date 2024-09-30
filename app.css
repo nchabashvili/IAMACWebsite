@@ -1,5 +1,5 @@
 body {
-  background-color: #faf7f0;
+  background-color: #fff;
   font-family: "Nunito", sans-serif;
 }
 
@@ -65,8 +65,8 @@ body {
 
 h2 {
   color: #ea1c2c;
-  font-weight: 100;
-  font-size: 2.5rem;
+  font-weight: 400;
+  font-size: 1.47rem;
 }
 
 .description p {
@@ -107,7 +107,10 @@ h2 {
 #projectHeading {
   display: flex;
   justify-content: center;
-  margin-top: 50px;
+  align-items: flex-start;
+  color: black;
+  font-size: 1.8rem;
+  margin-bottom: 100px;
 }
 
 #navLinks {
@@ -178,21 +181,25 @@ label {
 }
 
 @media (max-width: 768px) {
-  .navbar.scrolled {
-    ul {
-      background-color: #8e8a82d2;
-      transition: background 300ms;
-    }
-  }
-
   ul {
     width: 100%;
     margin: 0;
     padding: 20px;
-
+    background-color: #8e8a82d2;
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  ul li {
+    display: flex;
+    justify-content: center;
+    width: 400px;
+    border-bottom: 1px solid rgb(94, 94, 94);
+  }
+
+  ul li:last-child {
+    border-bottom: 0;
   }
 
   .navbar-brand {
@@ -201,6 +208,10 @@ label {
 
   #mainNavbar {
     padding: 0;
+  }
+
+  .navbar {
+    background-color: #8e8a82d2;
   }
 
   label {
