@@ -208,5 +208,13 @@
         });
       });
     </script>
+    <script>
+      $(function () {
+        $(document).scroll(function () {
+          var $ul = $("#navLinks");
+          $ul.toggleClass("scrolled", $(this).scrollTop() > $ul.height() / 17);
+        });
+      });
+    </script>
   </body>
 </html>
