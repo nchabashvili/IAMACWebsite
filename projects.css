@@ -12,6 +12,7 @@
   margin: calc(20% / 4);
   height: 500px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   flex-wrap: wrap;
   align-items: center;

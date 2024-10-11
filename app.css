@@ -155,7 +155,7 @@ footer p {
   margin-bottom: 0;
 }
 
-.navbar.scrolled {
+.navbar {
   background-color: #8e8a82d2;
   transition: background 300ms;
 }
@@ -183,7 +183,7 @@ label {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 770px) {
   ul {
     width: 100%;
     margin: 0;
@@ -194,7 +194,7 @@ label {
     align-items: center;
   }
 
-  #navLinks.scrolled {
+  #navLinks {
     background-color: #8e8a82d2;
     transition: background 300ms;
   }
