@@ -117,6 +117,7 @@ h2 {
 #navLinks {
   display: flex;
   justify-content: flex-end;
+  -webkit-backdrop-filter: blur(2px);
   backdrop-filter: blur(2px); /* Adjust blur level */
   z-index: 10; /* Ensure the navbar is above content */
 }
