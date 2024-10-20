@@ -161,11 +161,6 @@ footer p {
   transition: background 300ms;
 }
 
-.address {
-  padding-top: 20px;
-  padding-left: 40px;
-}
-
 label {
   margin: 0 40px 0 0;
   font-size: 26px;
