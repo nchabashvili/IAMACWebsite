@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,700"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+
+    <meta name="theme-color" content="#8e8a82d2" />
+
+    <link rel="stylesheet" href="gallery.css" />
+    <link rel="stylesheet" href="../app.css" />
+
+    <!-- Custom CSS -->
+
+    <title id="pageTitle">Project</title>
+    <!-- This will be dynamic -->
+  </head>
+  <body>
+    <nav
+      id="mainNavbar"
+      class="navbar navbar-dark navbar-expand-md py-0 fixed-top"
+    >
+      <a href="#" class="navbar-brand">IAMAC</a>
+
+      <label for="toggle">&#9776;</label>
+      <input type="checkbox" id="toggle" />
+
+      <div class="collapse navbar-collapse" id="navLinks">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a href="../index.html" class="nav-link">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a href="../projects.html" class="nav-link">PROJECTS</a>
+          </li>
+          <li class="nav-item">
+            <a href="../index.html#about" class="nav-link">ABOUT</a>
+          </li>
+          <li class="nav-item">
+            <a href="mailto:info@iamac.ge" class="nav-link">CONTACT US</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Slideshow Container -->
+    <div class="slideshow-container" id="slideshow-container">
+      <!-- Slides will be injected here dynamically -->
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <!-- Project Description -->
+    <div class="text-center" id="descriptionBox">
+      <h2 id="projectHeading"></h2>
+      <div class="description mb-5 mb-md-0">
+        <p class="lead" id="projectDescription"></p>
+      </div>
+    </div>
+
+    <!-- Project Navigation -->
+    <div id="projectSelector">
+      <a href="#" id="prevProjectLink"
+        ><button class="projectButtons">&#8592;</button></a
+      >
+      <p id="projectCounter"><sup></sup> / <sub></sub></p>
+      <a href="#" id="nextProjectLink"
+        ><button class="projectButtons">&#8594;</button></a
+      >
+    </div>
+
+    <!-- Scripts to make the page dynamic -->
+    <script>
+      // Function to get query parameter (like `id` from the URL)
+      function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+      }
+
+      // Fetch the JSON data
+      fetch("../projects.json")
+        .then((response) => response.json())
+        .then((data) => {
+          // Get the project ID from the URL, default to the first project
+          const projectId = getQueryParam("id");
+          const projectIndex = projectId ? parseInt(projectId) - 1 : 0;
+
+          // Select the project from the JSON array
+          const project = data[projectIndex];
+          const totalProjects = data.length;
+
+          if (project) {
+            // Dynamically update the page title
+            document.title = project.title;
+
+            // Update the project heading and description
+            document.getElementById("projectHeading").textContent =
+              project.title;
+            document.getElementById("projectDescription").textContent =
+              project.description;
+
+            // Update the slideshow with the project's images
+            const slideshowContainer = document.getElementById(
+              "slideshow-container"
+            );
+            slideshowContainer.innerHTML = ""; // Clear any existing slides
+
+            project.images.forEach((image, index) => {
+              const slideDiv = document.createElement("div");
+              slideDiv.classList.add("mySlides");
+
+              const img = document.createElement("img");
+              img.src = `../${image}`;
+              img.style.width = "100%";
+
+              const numberText = document.createElement("div");
+              numberText.classList.add("numbertext");
+              numberText.textContent = `${index + 1} / ${
+                project.images.length
+              }`;
+
+              slideDiv.appendChild(img);
+              slideDiv.appendChild(numberText);
+              slideshowContainer.appendChild(slideDiv);
+            });
+
+            // Initialize the slideshow functionality
+            showSlides(1);
+
+            // Update the navigation project counter
+            document.getElementById("projectCounter").innerHTML = `<sup>${
+              projectIndex + 1
+            }</sup> / <sub>${totalProjects}</sub>`;
+
+            // Set up previous and next project navigation links
+            const prevProjectIndex =
+              projectIndex === 0 ? totalProjects - 1 : projectIndex - 1;
+            const nextProjectIndex =
+              projectIndex === totalProjects - 1 ? 0 : projectIndex + 1;
+
+            document.getElementById(
+              "prevProjectLink"
+            ).href = `project.html?id=${prevProjectIndex + 1}`;
+            document.getElementById(
+              "nextProjectLink"
+            ).href = `project.html?id=${nextProjectIndex + 1}`;
+          } else {
+            // If project ID is invalid, show an error
+            document.getElementById("projectHeading").textContent =
+              "Project not found";
+            document.getElementById("projectDescription").textContent = "";
+          }
+        })
+        .catch((error) => console.error("Error fetching the JSON:", error));
+
+      // Slideshow logic
+      let slideIndex = 1;
+      function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        if (n > slides.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = slides.length;
+        }
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slides[slideIndex - 1].style.display = "block";
+      }
+
+      function plusSlides(n) {
+        showSlides((slideIndex += n));
+      }
+
+      function currentSlide(n) {
+        showSlides((slideIndex = n));
+      }
+    </script>
+
+    <script src="../footer.js"></script>
+  </body>
+</html>
