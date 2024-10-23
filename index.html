@@ -36,10 +36,8 @@
       class="navbar navbar-dark navbar-expand-md py-0 fixed-top"
     >
       <a href="#" class="navbar-brand">IAMAC</a>
-
       <label for="toggle">&#9776;</label>
       <input type="checkbox" id="toggle" />
-
       <div class="collapse navbar-collapse" id="navLinks">
         <ul class="navbar-nav">
           <li class="nav-item">
@@ -60,129 +58,79 @@
 
     <img src="imgs/project 2/renderi.jpg" alt="" id="mainPic" />
 
-    <section class="contrainer-fluid" id="projects">
-      <div class="row align-items-center content">
-        <div class="col-md-6 px-0 order-2 order-md-1">
-          <img src="imgs/project 1/3 ed.jpg" class="img-fluid" />
-        </div>
-        <div class="col-md-6 text-center order-1 order-md-2">
-          <div class="row justify-content-center">
-            <div class="col-10 col-lg-8 description mb-5 mb-md-0">
-              <h2>HOUSE IN MTSKETA</h2>
-
-              <p class="lead">
-                Near the capital of Georgia, on the shores of Lisi Lake, there
-                is a small settlement called Tkhinvala, which belongs to the
-                Mtskheta municipality. The project area is primarily a
-                residential neighbourhood with private houses and serves as a
-                summer vacation spot for the capital's residents
-              </p>
-              <a href="project/project.html?id=1">
-                <button class="seeMore" id="seeProject1">SEE MORE</button>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <hr />
-
-      <div class="row align-items-center content">
-        <div class="col-md-6 text-center">
-          <div class="row justify-content-center">
-            <div class="col-10 col-lg-8 description mb-5 mb-md-0">
-              <h2>NIKOZI ART PALACE</h2>
-
-              <p class="lead">
-                Nikozi, is a village in Georgia, right next to the Russian
-                occupation line in the municipality of Gori. In 2008 a war wiped
-                out it's only animation film studio(one of the few in
-                Georgia).Despite lacking in appropriate venues to match its
-                ambitions, it maintained a rich cultural life and annually hosts
-                Nikozi International Animation Film Festival.
-              </p>
-              <a href="project/project.html?id=2">
-                <button class="seeMore" id="seeProject2">SEE MORE</button>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 px-0">
-          <img src="imgs/project 2/განშლა fade.jpg" class="img-fluid" />
-        </div>
-      </div>
-
-      <hr />
-
-      <div class="row align-items-center content">
-        <div class="col-md-6 px-0 order-2 order-md-1">
-          <img src="imgs/project-3/el 2.jpg" class="img-fluid" />
-        </div>
-        <div class="col-md-6 text-center order-1 order-md-2">
-          <div class="row justify-content-center">
-            <div class="col-10 col-lg-8 description mb-5 mb-md-0">
-              <h2>HOUSE IN SAGURAMO</h2>
-
-              <p class="lead">
-                3-storey house designed with careful consideration for its
-                surroundings and maximizing the scenic view. The house
-                incorporates a unique layout, with the basement partially
-                submerged in the ground, while the ground floor and the first
-                floor are strategically oriented towards the captivating view of
-                Caucasus Mountains.
-              </p>
-              <a href="project/project.html?id=3">
-                <button class="seeMore" id="seeProject3">SEE MORE</button>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <hr />
-
-      <div class="row align-items-center content">
-        <div class="col-md-6 text-center">
-          <div class="row justify-content-center">
-            <div class="col-10 col-lg-8 description mb-5 mb-md-0">
-              <h2>TREE HOUSE MODULE</h2>
-
-              <p class="lead">
-                When someone mentions a tree house, the first impulse we have is
-                that of nostalgia not to a specific space but to a feeling of
-                childish escapism. A tree house for us represents an idea of an
-                ultimate refuge from rules and restrictions set upon us by
-                others. It's also a drive towards organizing and being in total
-                control of space around us no matter where we are.
-              </p>
-              <a href="project/project.html?id=4">
-                <button class="seeMore" id="seeProject4">SEE MORE</button>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 px-0">
-          <img src="imgs/project 4/100_აქსონომეტრია.jpg" class="img-fluid" />
-        </div>
-      </div>
-      <hr />
+    <section class="container-fluid" id="projects">
+      <div id="projectList"></div>
     </section>
 
     <section class="about">
       <div class="col-15 description">
         <h2 id="about">ABOUT</h2>
-
         <p class="lead">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates
           vel ab dolore recusandae exercitationem natus, explicabo cum, maxime
           aspernatur molestias quis in quo eveniet necessitatibus vero cumque
-          dicta voluptatibus hic? Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Id nulla, placeat eligendi cum tenetur mollitia
-          necessitatibus qui doloribus quidem veniam debitis officiis cumque
-          tempore assumenda suscipit sed ipsam nostrum totam.
+          dicta voluptatibus hic?
         </p>
       </div>
     </section>
+
+    <script>
+      // Fetch the JSON data
+      fetch("projects.json")
+        .then((response) => response.json())
+        .then((data) => {
+          const projectList = document.getElementById("projectList");
+          data.forEach((project, index) => {
+            // Use the first image from the images array
+            const firstImage = project.images[0]; // Get the first image
+
+            // Determine whether to show text or image first based on index
+            const projectHTML =
+              index % 2 === 0
+                ? `
+              <div class="row align-items-center content">
+                <div class="col-md-6 px-0">
+                  <img src="${firstImage}" class="img-fluid" />
+                </div>
+                <div class="col-md-6 text-center">
+                  <div class="row justify-content-center">
+                    <div class="col-10 col-lg-8 description mb-5 mb-md-0">
+                      <h2>${project.title}</h2>
+                      <p class="lead">${project.shortDescription}</p>
+                      <a href="${project.link}">
+                        <button class="seeMore">SEE MORE</button>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <hr />
+              `
+                : `
+              <div class="row align-items-center content">
+                <div class="col-md-6 text-center">
+                  <div class="row justify-content-center">
+                    <div class="col-10 col-lg-8 description mb-5 mb-md-0">
+                      <h2>${project.title}</h2>
+                      <p class="lead">${project.shortDescription}</p>
+                      <a href="${project.link}">
+                        <button class="seeMore">SEE MORE</button>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 px-0">
+                  <img src="${firstImage}" class="img-fluid" />
+                </div>
+              </div>
+              <hr />
+              `;
+
+            projectList.insertAdjacentHTML("beforeend", projectHTML);
+          });
+        })
+        .catch((error) => console.error("Error fetching the JSON:", error));
+    </script>
 
     <script src="footer.js"></script>
 
