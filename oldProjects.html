@@ -24,9 +24,9 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="app.css" />
-    <link rel="stylesheet" href="projects.css" />
 
     <title>PROJECTS</title>
+    <link rel="stylesheet" href="projects.css" />
   </head>
   <body>
     <nav
@@ -56,41 +56,60 @@
       </div>
     </nav>
 
-    <div class="container" id="projectsContainer"></div>
+    <div class="container">
+      <div class="project">
+        <h2 class="titlesProjects">HOUSE IN MTSKETA</h2>
+        <div class="image">
+          <img src="imgs/project 1/Tkhinvala_House_axo_vert.png" alt="" />
+        </div>
+        <div class="seeMore">
+          <a href="projects/1.html"
+            ><button class="seeMore">SEE MORE</button></a
+          >
+        </div>
+      </div>
 
-    <script>
-      // Fetch the projects JSON file
-      fetch("projects.json")
-        .then((response) => response.json())
-        .then((data) => {
-          const projectContainer = document.getElementById("projectsContainer");
+      <div class="project">
+        <h2 class="titlesProjects">NIKOZI ART PALACE</h2>
+        <div class="image">
+          <img src="imgs/project 2/აქსონომეტრია სუფთა.jpg" alt="" />
+        </div>
+        <div class="seeMore">
+          <a href="projects/2.html"
+            ><button class="seeMore">SEE MORE</button></a
+          >
+        </div>
+      </div>
 
-          // Loop through each project and create the HTML structure
-          data.forEach((project, index) => {
-            const projectHTML = `
-              <div class="project">
-                <h2 class="titlesProjects">${project.title}</h2>
-                <div class="image">
-                  <img src="${project.images[1]}" alt="${project.title}" />
-                </div>
-                <div class="seeMore">
-                  <a href="projects/${index + 1}.html">
-                    <button class="seeMore">SEE MORE</button>
-                  </a>
-                </div>
-              </div>
-            `;
+      <div class="project">
+        <h2 class="titlesProjects">HOUSE IN SAGURAMO</h2>
+        <div class="image">
+          <img src="imgs/project-3/აქსონომეტრია 2.jpg" alt="" />
+        </div>
+        <div class="seeMore">
+          <a href="projects/3.html"
+            ><button class="seeMore">SEE MORE</button></a
+          >
+        </div>
+      </div>
 
-            // Append the generated HTML to the container
-            projectContainer.innerHTML += projectHTML;
-          });
-        })
-        .catch((error) => console.error("Error loading projects:", error));
-    </script>
+      <div class="project">
+        <h2 class="titlesProjects">TREE HOUSE MODULE</h2>
+        <div class="image">
+          <img src="imgs/project 4/100_აქსონომეტრია.jpg" alt="" />
+        </div>
+        <div class="seeMore">
+          <a href="projects/4.html"
+            ><button class="seeMore">SEE MORE</button></a
+          >
+        </div>
+      </div>
+    </div>
 
     <script src="footer.js"></script>
 
     <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
