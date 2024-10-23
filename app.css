@@ -177,6 +177,9 @@ label {
     font-weight: 100;
     font-size: 3rem;
   }
+  h2 {
+    margin-top: 40px;
+  }
 }
 
 @media (max-width: 770px) {

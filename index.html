@@ -81,18 +81,16 @@
         .then((data) => {
           const projectList = document.getElementById("projectList");
           data.forEach((project, index) => {
-            // Use the first image from the images array
             const firstImage = project.images[0]; // Get the first image
 
-            // Determine whether to show text or image first based on index
             const projectHTML =
               index % 2 === 0
                 ? `
               <div class="row align-items-center content">
-                <div class="col-md-6 px-0">
+                <div class="col-md-6 col-12 ">
                   <img src="${firstImage}" class="img-fluid" />
                 </div>
-                <div class="col-md-6 text-center">
+                <div class="col-md-6 col-12 text-center ">
                   <div class="row justify-content-center">
                     <div class="col-10 col-lg-8 description mb-5 mb-md-0">
                       <h2>${project.title}</h2>
@@ -108,8 +106,8 @@
               `
                 : `
               <div class="row align-items-center content">
-                <div class="col-md-6 text-center">
-                  <div class="row justify-content-center">
+                <div class="col-md-6 col-12 order-2 order-md-1 text-center">
+                  <div class="row justify-content-center ">
                     <div class="col-10 col-lg-8 description mb-5 mb-md-0">
                       <h2>${project.title}</h2>
                       <p class="lead">${project.shortDescription}</p>
@@ -119,7 +117,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-md-6 px-0">
+                <div class="col-md-6 col-12 order-1 order-md-2">
                   <img src="${firstImage}" class="img-fluid" />
                 </div>
               </div>
