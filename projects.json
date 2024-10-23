@@ -13,7 +13,8 @@
       "imgs/project 1/Tkhinvala_House_insta_0.00_plan.png",
       "imgs/project 1/Tkhinvala_House_insta_3.80_plan.png",
       "imgs/project 1/აეროფოტო-თხინვალა.jpg"
-    ]
+    ],
+    "link": "project/project.html?id=1"
   },
   {
     "title": "NIKOZI ART PALACE",
@@ -28,7 +29,8 @@
       "imgs/project 2/renderi.jpg",
       "imgs/project 2/გეგმა ა1.jpg",
       "imgs/project 2/ვიუ.jpg"
-    ]
+    ],
+    "link": "project/project.html?id=2"
   },
   {
     "title": "HOUSE IN SAGURAMO",
@@ -41,7 +43,8 @@
       "imgs/project-3/ხედი 2.jpg",
       "imgs/project-3/el 2.jpg",
       "imgs/project-3/აეროფოტო-საგურამო pdf.jpg"
-    ]
+    ],
+    "link": "project/project.html?id=3"
   },
   {
     "title": "TREE HOUSE MODULE",
@@ -60,6 +63,7 @@
       "imgs/project 4/65_პერსპექტივი.jpg",
       "imgs/project 4/A3_29862_THM 3.jpg",
       "imgs/project 4/გეგმები.jpg"
-    ]
+    ],
+    "link": "project/project.html?id=4"
   }
 ]

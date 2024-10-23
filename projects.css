@@ -10,16 +10,17 @@
 .project {
   width: 40%;
   margin: calc(20% / 4);
-  height: 500px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   flex-wrap: wrap;
   align-items: center;
   padding: 10px;
+  margin-bottom: 50px;
 }
 
-.image {
+.image img {
+  margin-top: 10px;
   margin-bottom: 10px;
 }
 
@@ -30,9 +31,12 @@ img {
   object-position: center;
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 990px) {
   .project {
     width: 90%;
     margin: calc(10% / 2);
+    display: flex;
+    flex-direction: column;
+    text-align: center; /* Center title and content */
   }
 }

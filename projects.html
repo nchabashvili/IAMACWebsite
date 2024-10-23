@@ -68,18 +68,20 @@
           // Loop through each project and create the HTML structure
           data.forEach((project, index) => {
             const projectHTML = `
-              <div class="project">
-                <h2 class="titlesProjects">${project.title}</h2>
-                <div class="image">
-                  <img src="${project.images[1]}" alt="${project.title}" />
-                </div>
-                <div class="seeMore">
-                  <a href="project/project.html?id=${index + 1}">
-                    <button class="seeMore">SEE MORE</button>
-                  </a>
-                </div>
+          <div class="row project mb-5">
+            <div class="col-12 text-center">
+              <h2 class="titlesProjects">${project.title}</h2>
+              <div class="image">
+                <img src="${project.images[1]}" alt="${project.title}" />
               </div>
-            `;
+              <div class="seeMore mt-3">
+                <a href="project/project.html?id=${index + 1}">
+                  <button class="seeMore">SEE MORE</button>
+                </a>
+              </div>
+            </div>
+          </div>
+        `;
 
             // Append the generated HTML to the container
             projectContainer.innerHTML += projectHTML;
