@@ -32,14 +32,12 @@ body {
   background-color: transparent;
   margin-top: auto; /* Push the button to the bottom */
   text-align: center; /* Center the button */
-  border-bottom: 1px solid white;
 }
 
 .seeMore:hover {
   cursor: pointer;
   color: #ea1c2c;
   transition: all 0.2s ease-in-out;
-  border-color: black;
 }
 
 .projectButtons {
