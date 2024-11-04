@@ -65,7 +65,7 @@
         .then((data) => {
           const projectContainer = document.getElementById("projectsContainer");
 
-          // Loop through each project and create the HTML structure
+          //loop through each project and create the HTML structure
           data.forEach((project, index) => {
             const projectHTML = `
           <div class="row project mb-5">
@@ -83,7 +83,7 @@
           </div>
         `;
 
-            // Append the generated HTML to the container
+            //append the generated HTML to the container
             projectContainer.innerHTML += projectHTML;
           });
         })
