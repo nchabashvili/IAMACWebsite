@@ -75,6 +75,7 @@ h2 {
 }
 
 .about {
+  text-align: center;
   width: 60%;
   margin: 5% calc(40% / 2);
 }
