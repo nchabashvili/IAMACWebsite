@@ -72,7 +72,9 @@
             <div class="col-12 text-center">
               <h2 class="titlesProjects">${project.title}</h2>
               <div class="image">
-                <img src="${project.images[1]}" alt="${project.title}" />
+                <img src="${
+                  project.images[1]
+                }" loading="lazy" role="presentation" alt="${project.title}" />
               </div>
               <div class="seeMore mt-3">
                 <a href="project/project.html?id=${index + 1}">

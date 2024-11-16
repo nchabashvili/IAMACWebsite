@@ -145,13 +145,41 @@ h2 {
 }
 
 footer {
-  background-color: #43423f;
-  height: 100px;
+  background-color: #5c5b59;
+  height: 60px;
   margin: 0;
 }
 
 footer p {
+  color: black;
+}
+
+footer p,
+footer a {
   margin-bottom: 0;
+  margin-left: 10px;
+}
+
+.footerComponents {
+  padding: 0 5vh;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footerIcon {
+  color: black;
+}
+
+.footerIcon:hover {
+  color: #ea1c2c;
+}
+
+.footerIconInvisible {
+  font-style: none;
+  border: none;
+  color: #5c5b59;
 }
 
 .navbar {
