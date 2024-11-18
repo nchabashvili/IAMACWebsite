@@ -74,12 +74,6 @@ h2 {
   line-height: 2;
 }
 
-.about {
-  text-align: center;
-  width: 60%;
-  margin: 5% calc(40% / 2);
-}
-
 .divAbout p {
   color: black;
   font-weight: 100;
@@ -209,7 +203,38 @@ label {
   }
 }
 
+.about {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 60%;
+  margin: 5% calc(40% / 2);
+}
+
 @media (max-width: 770px) {
+  .footerComponents {
+    padding: 0 2vh;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footerIconInvisible {
+    display: none;
+  }
+
+  .about {
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    margin: 5% calc(30% / 2);
+  }
+
+  .about p {
+    font-size: 0.9em;
+  }
+
   ul {
     width: 100%;
     margin: 0;
